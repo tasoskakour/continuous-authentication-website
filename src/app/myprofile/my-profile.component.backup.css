@@ -1,0 +1,41 @@
+.userinfotitle {
+    color: #000000;
+    font-family: "Times New Roman", Georgia, Serif;
+    size: large;
+}
+
+.content {
+    background-color: #eee;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+    width: 350px;
+}
+
+.userinfo {
+    font-size: large;
+    text-align: left;
+}
+
+
+/*
+.userinfo:hover {
+    background-color: #FFFFFF;
+} */
+
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}

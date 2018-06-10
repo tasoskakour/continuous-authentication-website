@@ -1,0 +1,42 @@
+<div class="userinfotitle" align="center">
+
+
+    <h3> <i class="right"></i> Details for user: <strong>{{currentUser.username}}</strong></h3>
+</div>
+
+<div class="content">
+
+    <div class="userinfo">
+        <h4 style="text-decoration:underline;">Your Personal Information:</h4>
+        <ul style="list-style-type:disc">
+            <li><strong>Firstname: </strong>{{currentUser.firstname}}</li>
+            <li><strong>Lastname:</strong> {{currentUser.lastname}}</li>
+            <li><strong>Date Registered:</strong> {{currentUser.date}}</li>
+        </ul>
+
+        <h4 style="text-decoration:underline;">Cool facts of your keystroke profile:</h4>
+        <ul style="list-style-type:disc" *ngIf="keystrokeProfile_loadedFlag">
+            <li><strong>Minimum: </strong>{{keystrokeProfile.min}}</li>
+            <li><strong>Maximum: </strong>{{keystrokeProfile.max}}</li>
+            <li><strong>Average: </strong>{{keystrokeProfile.avg}}</li>
+            <li><strong>Standard Deviation: </strong>{{keystrokeProfile.std}}</li>
+            <li><strong>Fastest Digraph: </strong>"{{keystrokeProfile.fastest_digraph}}"</li>
+            <li><strong>Slowest Digraph: </strong>"{{keystrokeProfile.slowest_digraph}}"</li>
+        </ul>
+        <small style="font-style:italic;" *ngIf="keystrokeProfile_loadedFlag">(Timings in milliseconds)</small>
+
+        <p *ngIf="!keystrokeProfile_loadedFlag">{{keystrokeProf_msg}}</p>
+
+    </div>
+
+</div>
+
+<!--<div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" id="firstname" [(ngModel)]="currentUser.firstname" (ngModelChange)="onChange()" name="firstname">
+    </div>
+
+    <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" id="lastname" [(ngModel)]="currentUser.lastname" (ngModelChange)="onChange()" name="lastname">
+    </div>-->

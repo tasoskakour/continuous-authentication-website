@@ -1,0 +1,15 @@
+.imgrld {
+    width: 25px;
+    height: 25px;
+    border-radius: 7px;
+}
+
+.my-img {
+    width: 580px;
+    height: 330px;
+}
+
+h4.instructions {
+    font-style: italic;
+    color: grey;
+}

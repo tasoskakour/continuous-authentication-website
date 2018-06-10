@@ -1,0 +1,216 @@
+<div align="center" class="container">
+
+    <h3>First Use Case Scenario: A simulation of an online payment.</h3>
+
+    <div class="info">
+        Hundreds of billions of dollars are transacted every year and the number is still rising. The online payment procedure is for good, a part of our lives and is making our financial businesses easier.
+        <br> However, there are reported a lot of scams weekly from transactions and payments made by malicious people who didn't have authorized access to perform those transactions.
+        <br> Fortunately, with the kind of continuous authentication system we offer, we hope that the number of scams will be reduced drastically, as the system will detect the user and classify him as an intruder as his keystroke patterns will deviate
+        from the original user.
+        <br>
+        <br> In this use case scenario, we will simulate a real online payment. Specifically, we will provide you to enter some of your personal info (your sensitive info can be fake), just like those which you are required to provide when you perform
+        an online payment to purchase some product.
+        <br> For this reason, we kindly ask you to fill the form below, by typing your personal information normally as you would type it on a real scenario.
+    </div>
+
+
+
+    <div>
+        <hr>
+        <h4 style="font-weight: bold; text-decoration: underline;"> ONLINE PAYMENT FORM SIMULATION</h4>
+        <br>
+        <!--Payment form starts her-->
+        <div class="container wrapper">
+            <div class="row cart-head">
+                <div class="container">
+
+                    <div class="row">
+                        <div style="display: table; margin: auto;">
+                            <span class="step step_complete"> Cart <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+                            <span class="step step_complete"> Checkout<span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
+                            <span class="step_thankyou check-bc step_complete">Thank you</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row cart-body">
+
+
+                <!-- Form Starts here -->
+                <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && placeOrder()" #f="ngForm" novalidate>
+
+                    <div style="width:600px;">
+                        <!--SHIPPING METHOD-->
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Address</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <h4>Shipping Address</h4>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !country.valid }">
+                                    <div class="col-md-12"><strong>Country:</strong></div>
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" name="country" [(ngModel)]="model.country" #country="ngModel" required />
+                                        <div *ngIf="f.submitted && !country.valid" class="help-block">Country is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && (!first_name.valid || !last_name.valid) }">
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>First Name:</strong>
+                                        <input type="text" name="first_name" class="form-control" [(ngModel)]="model.first_name" #first_name="ngModel" required />
+                                        <div *ngIf="f.submitted && !first_name.valid" class="help-block">First Name is required</div>
+                                    </div>
+                                    <div class="span1"></div>
+                                    <div class="col-md-6 col-xs-12">
+                                        <strong>Last Name:</strong>
+                                        <input type="text" name="last_name" class="form-control" [(ngModel)]="model.last_name" #last_name="ngModel" required />
+                                        <div *ngIf="f.submitted && !last_name.valid" class="help-block">Last Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address.valid}">
+                                    <div class="col-md-12"><strong>Address:</strong></div>
+                                    <div class="col-md-12">
+                                        <input type="text" name="address" class="form-control" [(ngModel)]="model.address" #address="ngModel" required />
+                                        <div *ngIf="f.submitted && !address.valid" class="help-block">Address is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid}">
+                                    <div class="col-md-12"><strong>City:</strong></div>
+                                    <div class="col-md-12">
+                                        <input type="text" name="city" class="form-control" [(ngModel)]="model.city" #city="ngModel" required />
+                                    </div>
+                                    <div *ngIf="f.submitted && !address.valid" class="help-block">City is required</div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !state.valid}">
+                                    <div class="col-md-12"><strong>State:</strong></div>
+                                    <div class="col-md-12">
+                                        <input type="text" name="state" class="form-control" [(ngModel)]="model.state" #state="ngModel" required />
+                                    </div>
+                                    <div *ngIf="f.submitted && !state.valid" class="help-block">State is required</div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipcode.valid}">
+                                    <div class="col-md-12"><strong>Zip / Postal Code:</strong></div>
+                                    <div class="col-md-12">
+                                        <input type="text" name="zipcode" class="form-control" [(ngModel)]="model.zipcode" #zipcode="ngModel" required />
+                                    </div>
+                                    <div *ngIf="f.submitted && !zipcode.valid" class="help-block">Zip code is required</div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !phonenumber.valid}">
+                                    <div class="col-md-12"><strong>Phone Number:</strong></div>
+                                    <div class="col-md-12"><input type="text" name="phonenumber" class="form-control" [(ngModel)]="model.phonenumber" #phonenumber="ngModel" required /></div>
+                                </div>
+                                <div *ngIf="f.submitted && !phonenumber.valid" class="help-block">Phone number is required</div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !emailaddress.valid}">
+                                    <div class="col-md-12"><strong>Email Address:</strong></div>
+                                    <div class="col-md-12"><input type="text" name="emailaddress" class="form-control" [(ngModel)]="model.emailaddress" #emailaddress="ngModel" required /></div>
+                                </div>
+                                <div *ngIf="f.submitted && !emailaddress.valid" class="help-block">Email-address is required</div>
+                            </div>
+                        </div>
+                        <!--SHIPPING METHOD END-->
+                        <!--CREDIT CART PAYMENT-->
+                        <div class="panel panel-info">
+                            <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-12"><strong>Card Type:</strong></div>
+                                    <div class="col-md-12">
+                                        <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                        <option value="5">Visa</option>
+                                        <option value="6">MasterCard</option>
+                                        <option value="7">American Express</option>
+                                        <option value="8">Discover</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cardnumber.valid}">
+                                    <div class="col-md-12"><strong>Credit Card Number:</strong></div>
+                                    <div class="col-md-12"><input type="text" class="form-control" name="cardnumber" [(ngModel)]="model.cardnumber" #cardnumber="ngModel" required /></div>
+                                </div>
+                                <div *ngIf="f.submitted && !cardnumber.valid" class="help-block">Card number is required</div>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !cardcode.valid}">
+                                    <div class="col-md-12"><strong>Card CVV:</strong></div>
+                                    <div class="col-md-12"><input type="text" class="form-control" name="cardcode" [(ngModel)]="model.cardcode" #cardcode="ngModel" required /></div>
+                                </div>
+                                <div *ngIf="f.submitted && !cardcode.valid" class="help-block">Card number is required</div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <strong>Expiration Date</strong>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <select class="form-control" name="">
+                                        <option value="">Month</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                </select>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <select class="form-control" name="">
+                                        <option value="">Year</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <span>Pay secure using your credit card.</span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ul class="cards">
+                                            <li class="visa hand">Visa</li>
+                                            <li class="mastercard hand">MasterCard</li>
+                                            <li class="amex hand">Amex</li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <button type="submit" class="btn btn-primary">Place Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--CREDIT CART PAYMENT END-->
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!--payment form ends here-->
+    </div>
+
+
+
+
+
+
+
+</div>

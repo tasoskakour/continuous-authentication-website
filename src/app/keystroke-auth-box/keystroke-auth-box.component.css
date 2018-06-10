@@ -1,0 +1,103 @@
+.key-auth-wrapper {
+    display: inline-block;
+    border: 1px solid #186AA1;
+    border-radius: 4px;
+    padding: 10px 15px 15px 15px;
+    text-align: center;
+    background-image: url('/assets/img/keystroke-auth-box/bg7.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.key-auth-wrapper h4 {
+    color: white;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.key-auth-wrapper h4 span.instructions-msg {
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+
+/* Text stuff */
+
+.text {
+    background-color: #747171;
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 9px 10px 9px;
+}
+
+.text-wrapper textarea {
+    margin-top: 5px;
+    color: black;
+    font-size: 16px;
+    width: 20em;
+    max-width: 20em;
+    min-width: 20em;
+    height: 5em;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+
+/*Questions stuff */
+
+.question-wrapper {
+    display: inline-block;
+    background-color: rgba(116, 113, 113, 0.71);
+    padding: 12px 9px 12px 9px;
+}
+
+tr.question-answer:not(:first-child)>td {
+    padding-top: 5px;
+}
+
+tr.question-answer:not(:last-child)>td {
+    padding-bottom: 10px;
+}
+
+span.question {
+    color: white;
+    font-size: 14px;
+    /* padding-right: 2px; */
+    font-weight: bold;
+}
+
+span.answer {
+    color: black;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+
+/* Err msg stuff */
+
+.err-msg {
+    color: #FF9900;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+/* span.answer input {
+    width: 15em;
+} */
+
+
+/* .question-answer {
+    color: white;
+    font-size: 16px;
+    padding: 10px 9px 10px 9px;
+} */
+
+
+/* Padding: top,right,bottom,left */

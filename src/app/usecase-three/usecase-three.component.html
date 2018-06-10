@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <div align="center">
+        <h3>Use Case 3: Answering Questions.</h3>
+        <h4 class="instructions">Answer the {{questions.length}} questions below.</h4>
+    </div>
+</div>
+
+
+<div class="questionnaire-wrapper">
+
+    <div class="row questions-answer" *ngFor="let question of questions;let i = index;">
+        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+            <label class="question">{{i+1}})&nbsp;&nbsp;{{question}}</label>
+        </div>
+        <div class="col-lg-7 col-lg-6 col-sm-6 col-xs-12">
+            <input placeholder="Type your answer here..." class="form-control answer" [(ngModel)]="answers[i]">
+            <div *ngIf="doneClicked && (answers[i] == undefined || answers[i] == '')" class="help-block">Your answer is empty!</div>
+        </div>
+
+    </div>
+
+</div>
+
+<br><br>
+<div align="center">
+    <button class="btn btn-primary btn-lg" (click)="this.doneClicked = true;done()">Done!</button>
+</div>
+
+
+
+
+<!-- Success Modal -->
+<div class="modal" id="modal3-success">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thank you for your time!</h4>
+            </div>
+            <div class="modal-body" align="center">
+                <img src="assets/img/misc/loading2.gif" style="width:30px;height:auto;">
+                <p style="font-size:18px;">Redirecting you to Use case 4</p>
+            </div>
+        </div>
+    </div>
+</div>

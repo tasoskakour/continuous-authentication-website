@@ -1,0 +1,52 @@
+<div class="jumbotron">
+    <div align="center">
+        <h3>Use Case 4: Composing a paragraph.</h3>
+        <h4 class="instructions">Type the text you see below, in the textarea.</h4>
+    </div>
+
+</div>
+
+
+
+<!-- <div class="row">
+        <div class="col-lg-8">
+            <p style="font-size:large;"> <br> The present and last use case scenario is very simple: Pure writing of a given text.
+                <br> We present you this case scenario in order to get as much as keystroke data we can from your patterns and timings in order to create a keystroke profile that matches as much as possible your real one.
+                <br>
+                <br> You are given three paragraphs, containing random sentences from random texts and the only thing you have to do is type the text you see to the text-area below.
+                <br> Of course you don't have to type all the text you see, but the more text you type, the higher the probability of the system of kicking a hacker out of your profile. &#9786;</p>
+        </div>
+        <div class="col-lg-4" align="center">
+            <img src="././assets/img/ucasethree/usecasethree.png" style="width:50%;height:auto;">
+        </div>
+    </div> -->
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <p class="random-paragraph">{{myRandomParagraph}}</p>
+    </div>
+    <textarea class="form-control user-input" onpaste="return false" ondrop="return false;" cols="20" rows="12" placeholder="Type the text above here..."
+        id="textArea" [(ngModel)]="textAreaRandomParagraph"></textarea>
+</div>
+<div align="center">
+    <button class="btn btn-primary btn-lg" (click)="textAreaDone()">Done!</button>
+</div>
+
+
+
+
+
+
+<!-- Success Modal -->
+<div class="modal" id="myModal4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thank you for your time!</h4>
+            </div>
+            <div class="modal-body" align="center">
+                <img src="assets/img/misc/loading2.gif" style="width:30px;height:auto;">
+                <p style="font-size:18px;">Redirecting you back to Home!</p>
+            </div>
+        </div>
+    </div>
+</div>

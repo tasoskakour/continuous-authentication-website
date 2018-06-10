@@ -1,0 +1,21 @@
+h4.instructions {
+    font-style: italic;
+    color: grey;
+}
+
+.questions-answer {
+    padding-bottom: 25px;
+}
+
+label.question {
+    font-size: 22px;
+}
+
+input.answer {
+    /* color: black; */
+    font-size: 20px;
+}
+
+.help-block {
+    color: red;
+}

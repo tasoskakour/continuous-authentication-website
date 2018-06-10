@@ -1,0 +1,85 @@
+<br>
+
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h4>Your Profile</h4>
+    </div>
+
+    <div class="panel-body">
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <legend>Personal Information</legend>
+                <ul class="list-group" style="font-size:larger;">
+                    <li class="list-group-item">
+                        <label>Username:</label> {{currentUser.username}}
+                    </li>
+                    <li class="list-group-item">
+                        <label>First Name:</label> {{currentUser.firstname}}
+                    </li>
+                    <li class="list-group-item">
+                        <label>Last Name:</label> {{currentUser.lastname}}
+                    </li>
+                    <li class="list-group-item">
+                        <label>Date Registered:</label> {{currentUser.date}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <legend>Stuff about your keystroke dynamics</legend>
+
+                <div *ngIf="!loadingProfile && dataAvailable">
+                    <ul class="list-group" style="font-size:larger">
+                        <li class="list-group-item">
+                            <label>Total Keystrokes:</label> {{keystrokeProfileStatistics.total_keystrokes}}
+                        </li>
+                        <li class="list-group-item">
+                            <label>Average
+                                <i>Key Hold</i> Time:</label> {{keystrokeProfileStatistics.key_hold_stat.mean | number:'1.2-2'}}
+                            &plusmn; {{keystrokeProfileStatistics.key_hold_stat.std | number:'1.2-2'}} ms
+                        </li>
+                        <li class="list-group-item">
+                            <label>Average
+                                <i>Digraph Up-Down Flight</i> Time:</label> {{keystrokeProfileStatistics.digraph_up_down_stat.mean
+                            | number:'1.2-2'}} &plusmn; {{keystrokeProfileStatistics.digraph_up_down_stat.std | number:'1.2-2'}}
+                            ms
+                        </li>
+                        <li class="list-group-item">
+                            <label>Average
+                                <i>Digraph Down-Down Flight</i> Time:</label> {{keystrokeProfileStatistics.digraph_down_down_stat.mean
+                            | number:'1.2-2'}} &plusmn; {{keystrokeProfileStatistics.digraph_down_down_stat.std | number:'1.2-2'}}
+                            ms
+                        </li>
+                        <li class="list-group-item">
+                            <label>Average
+                                <i>Digraph Up-Up Flight</i> Time:</label> {{keystrokeProfileStatistics.digraph_up_up_stat.mean
+                            | number:'1.2-2'}} &plusmn; {{keystrokeProfileStatistics.digraph_up_up_stat.std | number:'1.2-2'}}
+                            ms
+                        </li>
+                    </ul>
+                    <p align="left">
+                        <small style="font-style:italic;">
+                            <span style="font-weight: bold;">Up-Down Times</span> can be negative if for a digraph, you press the second key before leaving
+                            the first.
+                        </small>
+                    </p>
+                </div>
+
+                <div *ngIf="loadingProfile" align="center">
+                    <img src="assets/img/misc/loading.gif" style="width:60px;height:60px;">
+                </div>
+
+                <div *ngIf="!loadingProfile && !dataAvailable">
+                    <p>
+                        <strong>You do not have any keystroke data yet!</strong>
+                    </p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

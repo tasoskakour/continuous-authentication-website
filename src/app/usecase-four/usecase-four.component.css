@@ -1,0 +1,17 @@
+p.random-paragraph {
+    white-space: pre-line;
+    text-align: justify;
+    font-size: 19px;
+}
+
+textarea.user-input {
+    color: black;
+    font-size: 19px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+h4.instructions {
+    font-style: italic;
+    color: grey;
+}

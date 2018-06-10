@@ -1,0 +1,61 @@
+<div class="jumbotron">
+    <div align="center">
+        <h3>Use Case 2: A description of a picture.</h3>
+        <h4 class="instructions">Describe the picture you see below, in the textarea.</h4>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <!-- <div class="row">
+        <div class="col-lg-8">
+            <p style="font-size:large;"> <br> We provide you this use case scenario in order to record your keystrokes in a free-floating-text enviroment; that is an enviroment where your typings come exclusively by what you think and imagine and aren't constrained by typical informations
+                or filling forms etc.
+                <br>
+                <br> As you can see, a picture is presented below and you will have to describe it in a written manner like you are composing a paragraph. For example, you can start by describing the colors of the picture (eg. "The picture has mainly
+                grey and yellow colors"), after that you can describe the brightness of the picture (eg. "This picture is very dark") and after that you can describe what you are actually seeing in the picture (eg. "I see a pigeon flying above a street").
+                Finally, you can describe what emotions or what memories appear to you when you are looking at this picture (eg. "This picture reminds me of my childhood"). </p>
+        </div>
+        <div class="col-lg-4">
+            <br>
+            <br>
+            <br>
+            <blockquote>
+                <p>One Look is Worth A Thousand Words.</p>
+                <small>Fred R. Barnard in the advertising trade journal<cite title="Source Title"> Printers' Ink, 1921</cite></small>
+            </blockquote>
+        </div>
+    </div> -->
+
+
+    <div align="center">
+        <img [src]="imgsrc" class="my-img" />
+        <input type="image" class='imgrld' (click)="getImage()" src="assets/img/misc/a.png" />
+        <br><br>
+        <textarea onpaste="return false" ondrop="return false" class="form-control" style="color:black;" cols="20" rows="6" placeholder="Type text here...." id="textAreaImgDescr" [(ngModel)]="textAreaImgDescr"></textarea>
+        <br>
+        <button class="btn btn-primary btn-lg" (click)="imgDescrDone()">Done!</button>
+        <br>
+    </div>
+
+
+</div>
+
+
+
+
+<!-- Success Modal -->
+<div class="modal" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Thank you for your time!</h4>
+            </div>
+            <div class="modal-body" align="center">
+                <img src="assets/img/misc/loading2.gif" style="width:30px;height:auto;">
+                <p style="font-size:18px;">Redirecting you to Use case 3</p>
+            </div>
+        </div>
+    </div>
+</div>

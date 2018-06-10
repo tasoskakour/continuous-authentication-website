@@ -1,0 +1,17 @@
+legend {
+    color: black;
+}
+
+h6 {
+    color: black;
+}
+
+input.form-control {
+    color: black;
+}
+
+.keystroke-auth-box {
+    background-color: #e95420;
+    color: white;
+    font-size: 15px;
+}

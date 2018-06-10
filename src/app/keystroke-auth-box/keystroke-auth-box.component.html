@@ -1,0 +1,35 @@
+<div class="key-auth-wrapper">
+    <h4>
+        <span class="glyphicon glyphicon-lock"></span>Keystroke Authentication Section</h4>
+    <span *ngIf="type == 'question'" style="font-style:italic;color:#D8D7D7;text-decoration:underline;">Answer the questions below.</span>
+    <!-- <span class="instructions-msg">{{instructions_msg}}</span> -->
+    <br>
+
+
+    <!-- If type is text -->
+    <div *ngIf="type == 'text'" class="text-wrapper">
+        <div class="text">{{myRandomQuote}}<img *ngIf="myRandomQuoteLoading" src="../../assets/img/misc/loading2.gif" width="20" height="20" /></div>
+        <br>
+        <textarea onpaste="alert('Gotcha! ;)');return false" ondrop="alert('Gotcha! ;)');return false" class="keystroke-auth-box-user-feedback"
+            placeholder="Type text above..." [(ngModel)]="textInput"></textarea>
+    </div>
+
+
+    <!-- If type is question -->
+    <div *ngIf="type == 'question'" class="question-wrapper">
+        <table>
+            <tr *ngFor="let question of questionArr;let i = index;" class="question-answer">
+                <td>
+                    <span class="question">{{question}}</span>
+                </td>
+                <td>
+                    <span class="answer">
+                        <input onpaste="alert('Gotcha! ;)');return false" ondrop="alert('Gotcha! ;)');return false" class="keystroke-auth-box-user-feedback"
+                            type="text" placeholder="Type your answer here..." [(ngModel)]="answerInputArr[i]">
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="err_msg !== ''" class="err-msg">{{err_msg}}</div>
+</div>

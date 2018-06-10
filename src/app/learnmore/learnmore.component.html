@@ -1,0 +1,74 @@
+<div class="panel panel-info">
+    <div class="panel-heading" align="left">
+        <h4>Learn More</h4>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="learn-more-text">
+                    <p><strong>Keystroke dynamics</strong>, keystroke biometrics or typing dynamics, is the detailed timing information which describes exactly when each key was pressed and when it was released as a person is typing at a computer keyboard
+                        (more
+                        <a href="https://en.wikipedia.org/wiki/Keystroke_dynamics">here</a>).</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img src="././assets/img/learn-more/keystroke-dynamics.jpg" style="width:70%;height:auto;">
+            </div>
+        </div>
+
+        <div class="learn-more-text">
+            <p>
+                <br> The present site, uses in addition to the regular username-password authentication, a continuous authentication mechanism based, exactly on keystroke dynamics.
+                <br> Specifically, after the first level-authentication of username-password provided at the login procedure, the authentication continues, by recording the keystroke timings and patterns of the user and the system either allows the user
+                to continue browsing the website or classify the user as a malicious one and locks him out of the system.
+            </p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="learn-more-text">
+                    <p> Of course, in order for this mechanism to work, the system needs enough keystroke patterns and timings of the user so it can build his keystroke dynamics profile, and eventually when the data is enough the system will apply the mechanism
+                        described above.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <img src="././assets/img/learn-more/ContinuousAuthentication.png" style="width:70%;height:auto;">
+            </div>
+        </div>
+
+        <div class="learn-more-text">
+            <p>
+                <br> So in order to collect enough keystroke dynamics data of yours, we offer you some simple <strong>use case scenarios</strong> simulations of the real world where a user need to type something that is at some times very sensitive (like
+                his bank-account information) or not so sensitive (like a writing of a friendly e-mail).
+                <br>
+                <br>Also by visiting your profile you can see some cool stuff of your keystroke dynamics profile (like your timings).
+            </p>
+        </div>
+
+
+    </div>
+
+
+</div>
+<br>
+<!--Show this if user is not logged in  -->
+<div *ngIf="!authService.isUserLoggedIn()">
+    <div align="center">
+        <h3>Get started now by creating a free account!</h3>
+    </div>
+    <br>
+    <div align="center"><a [routerLink]="['/register']" class="btn btn-primary btn-lg">Create Account</a></div>
+</div>
+<!--Show that if user is logged in  -->
+<div *ngIf="authService.isUserLoggedIn()">
+    <div align="center">
+        <h3>Get started now with the first use case!</h3>
+    </div>
+    <br>
+    <div align="center"><a [routerLink]="['/ucase1']" class="btn btn-primary btn-lg">Use Case 1</a></div>
+</div>

@@ -1,0 +1,82 @@
+﻿<div class="home-container">
+
+    <topnavbar></topnavbar>
+
+    <div class="intro-text" *ngIf="!this.authService.isUserLoggedIn()">
+        <h1>SafeShop</h1>
+        <h2>"Shopping done safely"</h2>
+        <br>
+        <button class="btn btn-primary btn-lg" [routerLink]="['/login']">Login</button>
+        <button class="btn btn-default btn-lg register-btn" [routerLink]="['/register']">Register</button>
+    </div>
+    <div class="intro-text" *ngIf="this.authService.isUserLoggedIn()">
+        <h1>Welcome back
+            <span class="username">{{username}}</span>
+        </h1>
+        <h4>Click a button below to get started!</h4>
+        <br>
+        <button disabled style="cursor: not-allowed!important;" class="btn btn-primary btn-lg" [routerLink]="['/myprofile']">Profile</button>&nbsp;&nbsp;
+        <div class="btn-group">
+            <a href="#" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">User Scenarios
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a [routerLink]="['/ucase1']">Use Case Scenario 1</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/ucase2']">Use Case Scenario 2</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/ucase3']">Use Case Scenario 3</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/ucase4']">Use Case Scenario 4</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div id="services-container">
+
+        <div id="services">
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <div class="service-col">
+                        <img src="../../assets/img/home/keyboard.png" style="width:100px;height:auto;">
+                        <h4>Keystroke Data Logging</h4>
+                        <p>We log your keystroke timings safely, by offering you to perform simple use case scenarios. </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="service-col">
+                        <img src="../../assets/img/home/profile_icon.png" style="width:100px;height:auto;">
+                        <h4>Keystroke Profile Creation</h4>
+                        <p>We create your keystroke profile from the data we've logged using machine learning techniques.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="service-col">
+                        <img src="../../assets/img/home/image.png" style="width:100px;height:auto;">
+                        <h4>Continuous Auth System</h4>
+                        <p>We apply a continuous authentication system using your keystroke profile and pattern recognition techniques. </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+</div>
