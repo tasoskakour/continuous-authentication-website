@@ -10,7 +10,7 @@ A website to collect keystrokes and to apply the [continuous-authentication-serv
 - You `create an account`
 - You perform the use case scenarios in order for the service to collect as many `keystrokes`
 - The admin of the service `trains` the system and then a `keystroke profile` is created for you
-- Every time you log-in and after that each N seconds, your keystrokes are collected and analyzed on server for `anomalies`. If anomalies are detected you are given a confirmation-test to prove that you are who you say you are.
+- Every time you log-in (and after logging-in periodically), your keystrokes are collected and analyzed on server for `anomalies`. If anomalies are detected you are given a confirmation-test to prove that you are who you say you are.
 
 ### Keystroke authentication in action
 
