@@ -1,31 +1,39 @@
-# MeanApp
+# continuous-authentication-website
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+[![stack](https://badgen.net/badge/Stack/MEAN/green)](./LICENSE)
+ [![license](https://badgen.net/badge/License/MIT/blue)](./LICENSE)
+ 
+### Description
+A website to collect keystrokes and to apply the [continuous-authentication-service](https://github.com/tasoskakour/continuous-authentication-service)
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Procedure of service
+- You `create an account`
+- You perform the use case scenarios in order for the service to collect as many `keystrokes`
+- The admin of the service `trains` the system and then a `keystroke profile` is created for you
+- Every time you log-in and after that each N seconds, your keystrokes are collected and analyzed on server for `anomalies`. If anomalies are detected you are given a confirmation-test to prove that you are who you say you are.
 
-## Code scaffolding
+### Keystroke authentication in action
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+<img src="demo.gif">
+ 
+### Technologies used
 
-## Build
+- `MEAN Stack`: MongoDB, Express, Angular (4) and Nodejs used for this simple web application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Running steps
 
-## Running unit tests
+- `npm install`
+- `npm start`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng serve` for a angular dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
+### Environment Variables
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- `KEYSTROKE_DYNAMICS_MLAB_HOST`: Host url for mlab database
+- `KEYSTROKE_DYNAMICS_MLAB_USER`: Username of mlab
+- `KEYSTROKE_DYNAMICS_MLAB_PASSWORD`: Password of mlab
+- `KEYSTROKE_DYNAMICS_TOKEN_SECRET`: Secret for generating jwt tokens
 
-## Deploying to GitHub Pages
+### Running on Heroku
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The project is ready to be deployed to a Heroku dyno (as a node app). Just run `heroku create` and push the code to your heroku server.
